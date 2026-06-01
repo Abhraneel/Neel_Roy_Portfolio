@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Abhraneel Roy | Tech Portfolio</title>
+  <meta name="description" content="Portfolio of Abhraneel Roy — SAP S/4HANA consultant, automation-focused analyst, and MBA candidate." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root, [data-theme="light"] {
+      --text-xs: clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem);
+      --text-sm: clamp(0.875rem, 0.8rem + 0.35vw, 1rem);
+      --text-base: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
+      --text-lg: clamp(1.125rem, 1rem + 0.75vw, 1.5rem);
+      --text-xl: clamp(1.5rem, 1.2rem + 1.25vw, 2.25rem);
+      --text-2xl: clamp(2rem, 1.2rem + 2.5vw, 3.5rem);
+      --text-3xl: clamp(2.5rem, 1rem + 4vw, 5rem);
+      --space-1: 0.25rem; --space-2: 0.5rem; --space-3: 0.75rem; --space-4: 1rem; --space-5: 1.25rem;
+      --space-6: 1.5rem; --space-8: 2rem; --space-10: 2.5rem; --space-12: 3rem; --space-16: 4rem;
+      --space-20: 5rem; --space-24: 6rem; --space-32: 8rem;
+      --color-bg: #f5f5f7; --color-surface: #ffffff; --color-surface-2: #f9fafb; --color-surface-offset: #eef0f4;
+      --color-border: #dde1ea; --color-divider: #e5e7f0; --color-text: #111827; --color-text-muted: #6b7280;
+      --color-text-faint: #9ca3af; --color-text-inverse: #f9fafb; --color-primary: #2563eb; --color-primary-hover: #1d4ed8;
+      --color-accent: #f97316; --radius-sm: 0.375rem; --radius-md: 0.75rem; --radius-lg: 1rem; --radius-xl: 1.5rem;
+      --radius-full: 9999px; --shadow-sm: 0 1px 2px rgba(15,23,42,.08); --shadow-md: 0 10px 30px rgba(15,23,42,.12);
+      --shadow-lg: 0 24px 80px rgba(15,23,42,.18); --content: 1180px; --font-body: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      --font-display: 'Space Grotesk', 'Inter', sans-serif;
+    }
+    [data-theme="dark"] {
+      --color-bg: #020617; --color-surface: #020617; --color-surface-2: #020617; --color-surface-offset: #020617;
+      --color-border: #1f2937; --color-divider: #111827; --color-text: #e5e7eb; --color-text-muted: #9ca3af;
+      --color-text-faint: #6b7280; --color-text-inverse: #020617; --color-primary: #60a5fa; --color-primary-hover: #93c5fd;
+      --color-accent: #fb923c; --shadow-sm: 0 1px 2px rgba(0,0,0,.5); --shadow-md: 0 10px 30px rgba(0,0,0,.6);
+      --shadow-lg: 0 24px 80px rgba(0,0,0,.75);
+    }
+    *,:before,:after{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{font-family:var(--font-body);font-size:var(--text-base);line-height:1.6;background:var(--color-bg);color:var(--color-text)}
+    img,svg{display:block;max-width:100%;height:auto}
+    a{color:inherit;text-decoration:none}
+    button{font:inherit;border:none;background:none;color:inherit;cursor:pointer}
+    :focus-visible{outline:2px solid var(--color-primary);outline-offset:3px;border-radius:var(--radius-sm)}
+    .skip-link{position:absolute;left:-9999px;top:auto}.skip-link:focus{left:var(--space-4);top:var(--space-4);background:var(--color-surface);padding:var(--space-3) var(--space-4);z-index:1000;border-radius:var(--radius-md)}
+    .container{width:min(calc(100% - 2rem),var(--content));margin-inline:auto}
+    .eyebrow{font-size:var(--text-xs);letter-spacing:.18em;text-transform:uppercase;color:var(--color-text-muted)}
+    .site-header{position:sticky;top:0;z-index:100;background:color-mix(in srgb, var(--color-bg) 82%, transparent);backdrop-filter: blur(14px);border-bottom:1px solid color-mix(in srgb,var(--color-border) 75%, transparent)}
+    .nav{display:flex;align-items:center;justify-content:space-between;min-height:76px;gap:var(--space-4)}
+    .brand{display:flex;align-items:center;gap:var(--space-3);font-size:var(--text-sm);font-weight:700}
+    .brand svg{width:32px;height:32px;color:var(--color-primary)}
+    .nav-links{display:flex;flex-wrap:wrap;gap:var(--space-4);align-items:center}
+    .nav-links a{font-size:var(--text-sm);color:var(--color-text-muted)}
+    .nav-links a:hover,.btn:hover{color:var(--color-primary)}
+    .theme-toggle{width:44px;height:44px;border-radius:var(--radius-full);border:1px solid color-mix(in srgb,var(--color-border) 75%, transparent);display:grid;place-items:center;background:var(--color-surface)}
+    .hero{padding:clamp(4rem,8vw,8rem) 0 var(--space-16)}
+    .hero-grid{display:grid;grid-template-columns:1.3fr .9fr;gap:var(--space-12);align-items:end}
+    h1,h2,h3{font-family:var(--font-display);line-height:1.05;letter-spacing:-.03em}
+    h1{font-size:var(--text-3xl);max-width:11ch;margin:var(--space-4) 0 var(--space-5)}
+    .hero p{max-width:62ch;color:var(--color-text-muted)}
+    .lead{font-size:var(--text-lg);max-width:36ch;color:var(--color-text)}
+    .hero-actions,.contact-links{display:flex;flex-wrap:wrap;gap:var(--space-3);margin-top:var(--space-8)}
+    .btn{display:inline-flex;align-items:center;justify-content:center;min-height:46px;padding:0 var(--space-5);border-radius:var(--radius-full);font-size:var(--text-sm);transition:.2s ease;border:1px solid transparent}
+    .btn-primary{background:var(--color-primary);color:var(--color-text-inverse)}
+    .btn-primary:hover{background:var(--color-primary-hover);color:var(--color-text-inverse)}
+    .btn-secondary{background:var(--color-surface);border-color:var(--color-border)}
+    .hero-card,.panel,.project-card,.timeline-item,.skill-group,.cert-list,.contact-card{background:var(--color-surface);border:1px solid color-mix(in srgb,var(--color-border) 82%, transparent);border-radius:var(--radius-xl);box-shadow:var(--shadow-sm)}
+    .hero-card,.panel,.project-card,.timeline-item,.skill-group,.cert-list,.contact-card{transition:transform .2s ease,box-shadow .2s ease,border-color .2s ease,background-color .2s ease}
+    .project-card:hover,.timeline-item:hover,.skill-group:hover,.cert-list:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg);border-color:color-mix(in srgb,var(--color-primary) 24%, var(--color-border))}
+    .btn{transition:background-color .18s ease,color .18s ease,border-color .18s ease,transform .12s ease}
+    .btn:hover{transform:translateY(-1px)}
+    .project-tag{font-size:var(--text-xs);letter-spacing:.12em;text-transform:uppercase;color:#2563eb;background:rgba(37,99,235,.06);padding:.3rem .7rem;border-radius:999px;border:1px solid rgba(37,99,235,.18)}
+    .chip{padding:.4rem .9rem;border-radius:999px;background:#eef2ff;color:#4338ca;font-size:var(--text-xs);border:1px solid rgba(79,70,229,.18);transition:background-color .16s ease,color .16s ease,transform .12s ease}
+    .chip:hover{background:#e0e7ff;transform:translateY(-1px)}
+
+    .hero-card{padding:var(--space-6);display:grid;gap:var(--space-5)}
+    .metric{display:grid;gap:var(--space-1)}
+    .metric strong{font-size:var(--text-xl);font-family:var(--font-display)}
+    .metric span{font-size:var(--text-sm);color:var(--color-text-muted)}
+    main section{padding:var(--space-16) 0;border-top:1px solid var(--color-divider)}
+    .section-head{display:grid;grid-template-columns:.7fr 1.3fr;gap:var(--space-10);margin-bottom:var(--space-8)}
+    .section-head p{color:var(--color-text-muted);max-width:58ch}
+    .about-grid,.skills-grid,.contact-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:var(--space-6)}
+    .panel{padding:var(--space-6)}
+    .panel p,.timeline-copy,.project-body p,.skill-group li,.cert-list li,.contact-grid p{color:var(--color-text-muted)}
+    .timeline{display:grid;gap:var(--space-5)}
+    .timeline-item{padding:var(--space-6);display:grid;grid-template-columns:220px 1fr;gap:var(--space-6)}
+    .timeline-meta{font-size:var(--text-sm);color:var(--color-text-muted)}
+    .timeline-copy h3,.project-card h3{font-size:var(--text-xl);margin-bottom:var(--space-2)}
+    .chips{display:flex;flex-wrap:wrap;gap:var(--space-2);margin-top:var(--space-4)}
+    .chip{padding:.45rem .8rem;border-radius:var(--radius-full);background:var(--color-surface-offset);font-size:var(--text-xs);color:var(--color-text-muted)}
+    .projects-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:var(--space-6)}
+    .project-card{padding:var(--space-6);display:flex;flex-direction:column;gap:var(--space-4);min-height:100%}
+    .project-top{display:flex;justify-content:space-between;gap:var(--space-4);align-items:flex-start}
+    .project-tag{font-size:var(--text-xs);letter-spacing:.12em;text-transform:uppercase;color:var(--color-primary)}
+    .project-body ul,.skill-group ul,.cert-list ul{list-style:none;display:grid;gap:var(--space-2)}
+    .project-body li::before,.skill-group li::before,.cert-list li::before{content:"• ";color:var(--color-primary)}
+    .skills-grid{grid-template-columns:1.1fr .9fr}
+    .skill-group,.cert-list{padding:var(--space-6)}
+    .contact-grid{align-items:start}
+    .contact-card{padding:var(--space-6);background:linear-gradient(180deg, color-mix(in srgb,var(--color-primary) 10%, var(--color-surface)), var(--color-surface));border:1px solid color-mix(in srgb,var(--color-primary) 18%, var(--color-border));border-radius:var(--radius-xl);box-shadow:var(--shadow-md)}
+    footer{padding:var(--space-8) 0 var(--space-12);color:var(--color-text-muted);font-size:var(--text-sm)}
+    @media (max-width: 960px){
+      .hero-grid,.section-head,.timeline-item,.projects-grid,.about-grid,.skills-grid,.contact-grid{grid-template-columns:1fr}
+      .nav{align-items:flex-start;padding:var(--space-4) 0}
+      .nav-links{justify-content:flex-start}
+      h1{max-width:12ch}
+    }
+    @media (max-width: 640px){
+      .container{width:min(calc(100% - 1.25rem),var(--content))}
+      .hero{padding-top:var(--space-12)}
+      .hero-actions,.contact-links,.nav-links{gap:var(--space-2)}
+      .btn{width:100%}
+      .timeline-item,.hero-card,.panel,.project-card,.skill-group,.cert-list,.contact-card{padding:var(--space-5)}
+    }
+    @media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}*{transition:none!important}}
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="#top" aria-label="Abhraneel Roy home">
+        <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.8" aria-hidden="true">
+          <rect x="6" y="6" width="36" height="36" rx="10"></rect>
+          <path d="M15 31V17h7.5c4.5 0 7.5 2.7 7.5 7s-3 7-7.5 7H15Z"></path>
+          <path d="M29 30.5 35 36"></path>
+        </svg>
+        <span>Abhraneel Roy</span>
+      </a>
+      <nav class="nav-links" aria-label="Primary navigation">
+        <a href="#about">About</a>
+        <a href="#experience">Experience</a>
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+        <button class="theme-toggle" type="button" data-theme-toggle aria-label="Switch theme">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="top">
+      <div class="container hero-grid">
+        <div>
+          <div class="eyebrow">SAP consultant · automation analyst · MBA candidate</div>
+          <h1>Building enterprise solutions with process clarity and measurable impact.</h1>
+          <p class="lead">I work across SAP S/4HANA, operations, analytics, and digital enablement—bridging business process knowledge with practical automation, reporting, and transformation delivery.</p>
+          <p>My background spans four years in SAP MM/SD support and transformation programs, with hands-on work in incident and change management, testing, cutover support, user training, documentation, Power BI reporting, and Copilot-enabled process improvement.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="mailto:abhrasrmeee@gmail.com">Email me</a>
+            <a class="btn btn-secondary" href="https://www.linkedin.com/in/abhraneel-roy" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            <a class="btn btn-secondary" href="#projects">View projects</a>
+          </div>
+        </div>
+        <aside class="hero-card" aria-label="Profile highlights">
+          <div class="metric"><span>Current focus</span><strong>SAP + AI + transformation</strong></div>
+          <div class="metric"><span>Experience</span><strong>4+ years</strong></div>
+          <div class="metric"><span>Location</span><strong>Nottingham, UK</strong></div>
+          <div class="metric"><span>Education</span><strong>MBA, University of Nottingham</strong></div>
+        </aside>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow">About</div>
+            <h2>Tech profile with consulting depth</h2>
+          </div>
+          <p>I bring a mix of enterprise systems support, business process understanding, and consulting-style problem solving. Alongside SAP delivery at Cognizant, my MBA projects have covered marketing, sustainability, community strategy, pay framework consulting, and intergenerational wealth themes—giving me a broader lens on transformation, governance, and decision-making.</p>
+        </div>
+        <div class="about-grid">
+          <article class="panel">
+            <h3>What I work on</h3>
+            <p>SAP S/4HANA MM and SD operations, order-to-cash and procure-to-pay workflows, governance-led documentation, reporting, user enablement, and workflow improvement through tools like Power BI, Excel, Smartsheet, Power Automate, and Copilot Studio.</p>
+          </article>
+          <article class="panel">
+            <h3>How I add value</h3>
+            <p>I focus on making systems easier to run and easier to use—reducing friction for users, improving operational visibility, and supporting adoption with structured documentation, training packs, and practical automation.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="experience">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow">Experience</div>
+            <h2>Enterprise delivery and support</h2>
+          </div>
+          <p>My core experience comes from SAP support and business transformation delivery, combined with recent MBA work that sharpened my consulting, analysis, and presentation skills.</p>
+        </div>
+        <div class="timeline">
+          <article class="timeline-item">
+            <div class="timeline-meta">
+              <div>Jan 2021 — Jun 2025</div>
+              <div>Cognizant India</div>
+              <div>Associate Consultant</div>
+            </div>
+            <div class="timeline-copy">
+              <h3>SAP S/4HANA consultant</h3>
+              <p>Supported SAP MM and SD processes for a global manufacturing portfolio across procurement, inventory, sales orders, billing, and deliveries. Managed 25–30 incidents and change requests per week under SLA, supported SIT/UAT and cutover activity, and helped implement automation and AI-enabled solutions that improved operational efficiency.</p>
+              <div class="chips">
+                <span class="chip">SAP MM / SD</span>
+                <span class="chip">Incident & Change Mgmt</span>
+                <span class="chip">SIT / UAT</span>
+                <span class="chip">Copilot Studio</span>
+                <span class="chip">Power Automate</span>
+              </div>
+            </div>
+          </article>
+          <article class="timeline-item">
+            <div class="timeline-meta">
+              <div>Sep 2025 — Sep 2026</div>
+              <div>University of Nottingham</div>
+              <div>MBA Candidate</div>
+            </div>
+            <div class="timeline-copy">
+              <h3>Business and consulting projects</h3>
+              <p>Worked on applied projects spanning marketing strategy, sustainability, entrepreneurship, social enterprise consulting, pay framework design, and financial inclusion. These projects strengthened my ability to move from analysis to structured recommendations and stakeholder-ready outputs.</p>
+              <div class="chips">
+                <span class="chip">Strategy</span>
+                <span class="chip">Consulting</span>
+                <span class="chip">Financial analysis</span>
+                <span class="chip">Storytelling</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow">Selected projects</div>
+            <h2>Case studies across tech and management</h2>
+          </div>
+          <p>These projects show how I work across operational analysis, market strategy, structured frameworks, and stakeholder-facing recommendations.</p>
+        </div>
+        <div class="projects-grid">
+          <article class="project-card">
+            <div class="project-top">
+              <div>
+                <div class="project-tag">Marketing · Toast Ale</div>
+                <h3>Purpose-led growth strategy for a sustainable beer brand</h3>
+              </div>
+            </div>
+            <div class="project-body">
+              <p>Built a full strategic marketing analysis covering PESTEL, Porter’s Five Forces, SWOT, segmentation, positioning, and 4Ps recommendations for Toast Brewing.</p>
+              <ul>
+                <li>Recommended Gen Z and Millennial targeting through sustainability-led storytelling and stronger integrated marketing communications.</li>
+                <li>Proposed product expansion into non-alcoholic SKUs, QR-enabled packaging impact storytelling, and tiered pricing formats.</li>
+                <li>Developed channel recommendations spanning premium retail, festivals, D2C, and future European expansion.</li>
+              </ul>
+              <div class="chips"><span class="chip">Market analysis</span><span class="chip">STP</span><span class="chip">4Ps</span><span class="chip">Brand strategy</span></div>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-top">
+              <div>
+                <div class="project-tag">Community · Broxtowe</div>
+                <h3>Five-pillar transformation roadmap for a local charity</h3>
+              </div>
+            </div>
+            <div class="project-body">
+              <p>Worked on a social enterprise consultancy challenge for Broxtowe Community Projects, helping shape a more sustainable operating model.</p>
+              <ul>
+                <li>Designed recommendations across income diversification, data systems, co-production, public awareness, and long-term strategy.</li>
+                <li>Helped define a five-year roadmap with KPI-led milestones, impact measurement, and beneficiary engagement structures.</li>
+                <li>Linked community needs with practical delivery ideas such as social supermarket tiers, paid ESL classes, CSR partnerships, and dashboards.</li>
+              </ul>
+              <div class="chips"><span class="chip">Social enterprise</span><span class="chip">Impact strategy</span><span class="chip">Roadmapping</span></div>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-top">
+              <div>
+                <div class="project-tag">Consulting · Warwick / Deloitte-style brief</div>
+                <h3>Revised pay approach and governance framework</h3>
+              </div>
+            </div>
+            <div class="project-body">
+              <p>Contributed to a consultancy-style pay framework proposal for the University of Warwick, structured through SIPOC analysis, option modelling, and implementation planning.</p>
+              <ul>
+                <li>Worked with a layered pay architecture covering UCEA compliance, job-family benchmarking, and governed individual positioning.</li>
+                <li>Mapped options, cost scenarios, EIA implications, supplement governance, and implementation sequencing.</li>
+                <li>Framed recommendations with governance clarity, financial sustainability, and stakeholder risk in mind.</li>
+              </ul>
+              <div class="chips"><span class="chip">SIPOC</span><span class="chip">Framework design</span><span class="chip">Governance</span><span class="chip">Financial modelling</span></div>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-top">
+              <div>
+                <div class="project-tag">Tech · SAP self-service</div>
+                <h3>AI-assisted support experience in enterprise operations</h3>
+              </div>
+            </div>
+            <div class="project-body">
+              <p>In my Cognizant role, I designed and customized a Microsoft Power Virtual Agents / Copilot Studio chatbot to support SAP user self-service and improve support responsiveness.</p>
+              <ul>
+                <li>Reduced friction in ticket triage and supported faster issue routing and resolution.</li>
+                <li>Combined system understanding, user enablement, and documentation to make the solution practical for business teams.</li>
+                <li>Connected automation with day-to-day operational needs rather than treating AI as a standalone feature.</li>
+              </ul>
+              <div class="chips"><span class="chip">Copilot Studio</span><span class="chip">Chatbot design</span><span class="chip">User enablement</span></div>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-top">
+              <div>
+                <div class="project-tag">Sustainability · WW trading case</div>
+                <h3>Commercial sustainability thinking</h3>
+              </div>
+            </div>
+            <div class="project-body">
+              <p>This project is reserved for the WW trading case study you mentioned and can be expanded into a polished portfolio case once you share the underlying material.</p>
+              <ul>
+                <li>Current site structure already supports a future case-study page or expanded card.</li>
+                <li>The section can be upgraded with challenge, analysis, recommendation, and business impact blocks.</li>
+              </ul>
+              <div class="chips"><span class="chip">Placeholder ready</span><span class="chip">Add details next</span></div>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-top">
+              <div>
+                <div class="project-tag">Consulting · NBS</div>
+                <h3>Intergenerational wealth and savings concept</h3>
+              </div>
+            </div>
+            <div class="project-body">
+              <p>This card captures the NBS consultancy work on intergenerational wealth and savings, and it can be refined further with your preferred problem statement and recommendations.</p>
+              <ul>
+                <li>Positioned as a finance and inclusion-oriented consulting case within the broader portfolio.</li>
+                <li>Useful for showing versatility beyond SAP and enterprise systems into customer, policy, and financial behaviour themes.</li>
+              </ul>
+              <div class="chips"><span class="chip">Financial inclusion</span><span class="chip">Consulting</span><span class="chip">Expandable</span></div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow">Skills & credentials</div>
+            <h2>Enterprise tools, automation, and analysis</h2>
+          </div>
+          <p>My skill set combines enterprise application support, reporting, process documentation, and business-facing communication.</p>
+        </div>
+        <div class="skills-grid">
+          <article class="skill-group">
+            <h3>Core stack</h3>
+            <ul>
+              <li>SAP S/4HANA MM, SD, MDG; procure-to-pay and order-to-cash process support.</li>
+              <li>Power BI, Advanced Excel, Smartsheet, SQL, Power Automate, Microsoft Copilot and Copilot Studio.</li>
+              <li>Incident management, change management, testing support, cutover readiness, SOPs, training packs, and stakeholder communication.</li>
+              <li>Business analysis, KPI reporting, documentation, workflow mapping, and process improvement.</li>
+            </ul>
+          </article>
+          <article class="cert-list">
+            <h3>Certifications</h3>
+            <ul>
+              <li>SAP Certified: Master Data Governance, Business Transformation, SAP MDG Deployments, SuccessFactors Employee Lifecycle.</li>
+              <li>Microsoft Certified: Power Platform Fundamentals.</li>
+              <li>Google: Digital Marketing, Project Management, AI Essentials.</li>
+              <li>Oracle: ERP Foundations, HCM Foundations, OCI Foundations.</li>
+              <li>PMI: Generative AI Overview for Project Managers.</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container contact-grid">
+        <div>
+          <div class="eyebrow">Contact</div>
+          <h2>Open to tech, consulting, and transformation roles</h2>
+          <p>I’m particularly interested in opportunities across SAP consulting, business analysis, digital transformation, enterprise applications, and process improvement roles in the UK.</p>
+          <div class="contact-links">
+            <a class="btn btn-primary" href="mailto:abhrasrmeee@gmail.com">abhrasrmeee@gmail.com</a>
+            <a class="btn btn-secondary" href="tel:+447901309000">07901 309000</a>
+          </div>
+        </div>
+        <aside class="contact-card">
+          <h3>Find me online</h3>
+          <p>LinkedIn is linked below. GitHub and project repositories can be added in the next version once you share them.</p>
+          <div class="contact-links">
+            <a class="btn btn-secondary" href="https://www.linkedin.com/in/abhraneel-roy" target="_blank" rel="noopener noreferrer">LinkedIn profile</a>
+          </div>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">Designed as a refined editorial portfolio for Abhraneel Roy.</div>
+  </footer>
+
+  <script>
+    (function(){
+      const t=document.querySelector('[data-theme-toggle]');
+      const r=document.documentElement;
+      let d=window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';
+      r.setAttribute('data-theme',d);
+      const render=()=>{t.innerHTML=d==='dark'
+        ?'<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>'
+        :'<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>';
+        t.setAttribute('aria-label','Switch to '+(d==='dark'?'light':'dark')+' mode');
+      };
+      render();
+      t.addEventListener('click',()=>{d=d==='dark'?'light':'dark';r.setAttribute('data-theme',d);render();});
+    })();
+  </script>
+</body>
+</html>
