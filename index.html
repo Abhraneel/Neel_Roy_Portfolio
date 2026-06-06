@@ -1881,6 +1881,7 @@
             </article>
           </div>
           <!-- CERTIFICATION TABS -->
+                   
           <div class="cert-tabs reveal">
             <div class="cert-tabs-nav" role="tablist" aria-label="Certification tabs">
               <button
@@ -1891,7 +1892,7 @@
                 aria-controls="cert-sap"
                 data-cert-tab="sap"
               >
-                SAP
+                SAP MDG
               </button>
               <button
                 class="cert-tab"
@@ -1901,7 +1902,47 @@
                 aria-controls="cert-ms"
                 data-cert-tab="ms"
               >
-                Microsoft
+                Microsoft PL‑900
+              </button>
+              <button
+                class="cert-tab"
+                type="button"
+                role="tab"
+                aria-selected="false"
+                aria-controls="cert-gpm"
+                data-cert-tab="gpm"
+              >
+                Google Project Mgmt
+              </button>
+              <button
+                class="cert-tab"
+                type="button"
+                role="tab"
+                aria-selected="false"
+                aria-controls="cert-gai"
+                data-cert-tab="gai"
+              >
+                Google AI Essentials
+              </button>
+              <button
+                class="cert-tab"
+                type="button"
+                role="tab"
+                aria-selected="false"
+                aria-controls="cert-oracle"
+                data-cert-tab="oracle"
+              >
+                Oracle ERP / HCM
+              </button>
+              <button
+                class="cert-tab"
+                type="button"
+                role="tab"
+                aria-selected="false"
+                aria-controls="cert-pmi"
+                data-cert-tab="pmi"
+              >
+                PMI Gen AI
               </button>
             </div>
 
@@ -1929,7 +1970,7 @@
                   </div>
                   <div class="cert-panel-image">
                     <img
-                      src="SAP MDG.png"
+                      src="SAP2024Certification20260207-31-d890ei.pdf.jpg"
                       alt="SAP Certified - SAP Master Data Governance certificate"
                       loading="lazy"
                     />
@@ -1961,10 +2002,115 @@
                   </div>
                   <div class="cert-panel-image">
                     <img
-                      src="PL-900.png"
+                      src="PL-900.jpg"
                       alt="Microsoft Certified: Power Platform Fundamentals certificate"
                       loading="lazy"
                     />
+                  </div>
+                </div>
+              </div>
+
+              <!-- Google Project Management -->
+              <div
+                id="cert-gpm"
+                class="cert-tab-panel"
+                role="tabpanel"
+                aria-labelledby="cert-tab-gpm"
+                hidden
+              >
+                <div class="cert-panel-grid">
+                  <div class="cert-panel-text">
+                    <h3>Google Project Management Certificate</h3>
+                    <p>
+                      Covers core project management concepts including stakeholder management,
+                      risk, scheduling, and agile methods, with a focus on practical delivery.
+                    </p>
+                    <ul>
+                      <li>Strengthens my ability to structure SAP and transformation projects.</li>
+                      <li>Includes hands-on work with project plans, RAID logs, and reporting.</li>
+                      <li>Completed via Coursera and Google.</li>
+                    </ul>
+                  </div>
+                  <div class="cert-panel-image">
+                    <!-- Add an <img> here later if you export the certificate as an image -->
+                  </div>
+                </div>
+              </div>
+
+              <!-- Google AI Essentials -->
+              <div
+                id="cert-gai"
+                class="cert-tab-panel"
+                role="tabpanel"
+                aria-labelledby="cert-tab-gai"
+                hidden
+              >
+                <div class="cert-panel-grid">
+                  <div class="cert-panel-text">
+                    <h3>Google AI Essentials</h3>
+                    <p>
+                      Introduces practical AI concepts and how to apply them to everyday work,
+                      from data analysis to productivity and decision support.
+                    </p>
+                    <ul>
+                      <li>Supports my focus on Copilot and AI-enabled SAP support experiences.</li>
+                      <li>Covers prompts, ethics, and practical AI use cases for analysts.</li>
+                    </ul>
+                  </div>
+                  <div class="cert-panel-image">
+                    <!-- Optional: image placeholder for Google AI certificate -->
+                  </div>
+                </div>
+              </div>
+
+              <!-- Oracle ERP / HCM Foundations -->
+              <div
+                id="cert-oracle"
+                class="cert-tab-panel"
+                role="tabpanel"
+                aria-labelledby="cert-tab-oracle"
+                hidden
+              >
+                <div class="cert-panel-grid">
+                  <div class="cert-panel-text">
+                    <h3>Oracle ERP & HCM Foundations</h3>
+                    <p>
+                      Provides a baseline understanding of Oracle ERP and HCM cloud concepts,
+                      complementing my SAP background for multi-ERP environments.
+                    </p>
+                    <ul>
+                      <li>Helps me speak the language of both SAP and Oracle stakeholders.</li>
+                      <li>Covers key modules, integration ideas, and cloud fundamentals.</li>
+                    </ul>
+                  </div>
+                  <div class="cert-panel-image">
+                    <!-- Optional: image placeholder for Oracle certificate -->
+                  </div>
+                </div>
+              </div>
+
+              <!-- PMI Generative AI Overview -->
+              <div
+                id="cert-pmi"
+                class="cert-tab-panel"
+                role="tabpanel"
+                aria-labelledby="cert-tab-pmi"
+                hidden
+              >
+                <div class="cert-panel-grid">
+                  <div class="cert-panel-text">
+                    <h3>PMI: Generative AI Overview for Project Managers</h3>
+                    <p>
+                      Explores how project managers can leverage generative AI responsibly
+                      across planning, communication, and risk management.
+                    </p>
+                    <ul>
+                      <li>Connects AI concepts with structured project management practice.</li>
+                      <li>Supports my use of AI for documentation, reporting, and PM tasks.</li>
+                    </ul>
+                  </div>
+                  <div class="cert-panel-image">
+                    <!-- Optional: image placeholder for PMI certificate -->
                   </div>
                 </div>
               </div>
@@ -2109,10 +2255,10 @@
         els.forEach((el) => io.observe(el));
       })();
             // Certification tabs
+            // Certification tabs
       (function () {
         const tabButtons = document.querySelectorAll(".cert-tab");
         const panels = document.querySelectorAll(".cert-tab-panel");
-
         if (!tabButtons.length) return;
 
         tabButtons.forEach((btn) => {
@@ -2121,18 +2267,24 @@
 
             // Update buttons
             tabButtons.forEach((b) => {
-              b.classList.toggle("cert-tab-active", b === btn);
-              b.setAttribute("aria-selected", b === btn ? "true" : "false");
+              const isActive = b === btn;
+              b.classList.toggle("cert-tab-active", isActive);
+              b.setAttribute("aria-selected", isActive ? "true" : "false");
             });
 
             // Update panels
             panels.forEach((panel) => {
-              const isTarget =
-                (target === "sap" && panel.id === "cert-sap") ||
-                (target === "ms" && panel.id === "cert-ms");
+              const id = panel.id;
+              const matches =
+                (target === "sap" && id === "cert-sap") ||
+                (target === "ms" && id === "cert-ms") ||
+                (target === "gpm" && id === "cert-gpm") ||
+                (target === "gai" && id === "cert-gai") ||
+                (target === "oracle" && id === "cert-oracle") ||
+                (target === "pmi" && id === "cert-pmi");
 
-              panel.classList.toggle("cert-tab-panel-active", isTarget);
-              panel.hidden = !isTarget;
+              panel.classList.toggle("cert-tab-panel-active", matches);
+              panel.hidden = !matches;
             });
           });
         });
