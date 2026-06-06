@@ -902,112 +902,7 @@
       }
 
       /* CERT BADGES STRIP */
-      /* CERT GALLERY WITH IMAGES */
-      .cert-gallery {
-        margin-top: var(--space-12);
-      }
 
-      .cert-gallery-title {
-        font-family: var(--font-display);
-        font-size: var(--text-lg);
-        margin-bottom: var(--space-2);
-      }
-
-      .cert-gallery-sub {
-        font-size: var(--text-sm);
-        color: var(--color-text-muted);
-        margin-bottom: var(--space-5);
-        max-width: 46ch;
-      }
-
-      .cert-grid {
-        display: grid;
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-        gap: var(--space-5);
-      }
-
-      .cert-card {
-        background: var(--color-surface);
-        border-radius: var(--radius-lg);
-        border: 1px solid var(--color-border);
-        box-shadow: var(--shadow-sm);
-        overflow: hidden;
-        display: flex;
-        flex-direction: column;
-        height: 100%;
-        transition: transform 0.2s ease, box-shadow 0.2s ease,
-          border-color 0.2s ease;
-      }
-
-      .cert-card:hover {
-        transform: translateY(-4px);
-        box-shadow: var(--shadow-lg);
-        border-color: color-mix(
-          in srgb,
-          var(--color-primary) 30%,
-          var(--color-border)
-        );
-      }
-
-      .cert-image-wrap {
-        background: var(--color-surface-offset);
-        padding: var(--space-3);
-      }
-
-      .cert-image-wrap img {
-        width: 100%;
-        border-radius: var(--radius-md);
-        object-fit: contain;
-        max-height: 180px;
-      }
-
-      .cert-card figcaption {
-        padding: var(--space-4);
-      }
-
-      .cert-name {
-        font-size: var(--text-sm);
-        font-weight: 600;
-      }
-
-      .cert-meta {
-        font-size: var(--text-xs);
-        color: var(--color-text-muted);
-        margin-top: var(--space-1);
-      }
-
-      .cert-card-minimal {
-        padding: var(--space-4);
-      }
-
-      .cert-pill-grid {
-        display: flex;
-        flex-wrap: wrap;
-        gap: var(--space-2);
-        margin-bottom: var(--space-3);
-      }
-
-      .cert-pill {
-        padding: 0.3rem 0.7rem;
-        border-radius: var(--radius-full);
-        background: var(--color-surface-offset);
-        font-size: var(--text-xs);
-        color: var(--color-text-muted);
-        border: 1px solid var(--color-border);
-        white-space: nowrap;
-      }
-
-      @media (max-width: 960px) {
-        .cert-grid {
-          grid-template-columns: repeat(2, minmax(0, 1fr));
-        }
-      }
-
-      @media (max-width: 640px) {
-        .cert-grid {
-          grid-template-columns: 1fr;
-        }
-      }
       .cert-badges {
         margin-top: var(--space-8);
         display: flex;
@@ -1337,7 +1232,7 @@
             <div class="hero-profile">
               <!-- Replace src with your actual profile image filename -->
               <img
-                src="Profile pic.png"
+                src="IMG_5089.jpg"
                 alt="Abhraneel Roy portrait"
                 loading="lazy"
               />
@@ -1833,54 +1728,83 @@
           </div>
 
           <div class="skills-grid">
-                      <!-- Certification gallery with images -->
-                   <!-- Certification gallery with images -->
-          <div class="cert-gallery reveal">
-            <h3 class="cert-gallery-title">Certification highlights</h3>
-            <p class="cert-gallery-sub">
-              Visual snapshots of key credentials backing my SAP and automation work.
-            </p>
-            <div class="cert-grid">
-              <!-- SAP MDG certificate -->
-              <figure class="cert-card">
-                <div class="cert-image-wrap">
-                  <img
-                    src="SAP2024Certification20260207-31-d890ei.pdf.jpg"
-                    alt="SAP Certified - SAP Master Data Governance certificate"
-                    loading="lazy"
-                  />
-                </div>
-                <figcaption>
-                  <div class="cert-name">SAP Certified - SAP Master Data Governance</div>
-                  <div class="cert-meta">SAP · Issued Feb 2026</div>
-                </figcaption>
-              </figure>
+            <article class="skill-group reveal">
+              <h3>Core stack</h3>
+              <ul>
+                <li>
+                  SAP S/4HANA MM, SD, MDG — procure-to-pay and order-to-cash
+                  process support.
+                </li>
+                <li>
+                  Power BI, Advanced Excel, SQL, Smartsheet, Power Automate,
+                  Microsoft Copilot Studio.
+                </li>
+                <li>
+                  Incident & change management, SIT/UAT testing, cutover
+                  readiness, SOPs, training packs.
+                </li>
+                <li>
+                  Business analysis, KPI reporting, workflow mapping, and
+                  process improvement.
+                </li>
+              </ul>
+              <div class="skill-tags">
+                <span class="skill-tag">SAP S/4HANA</span>
+                <span class="skill-tag">Power BI</span>
+                <span class="skill-tag">SQL</span>
+                <span class="skill-tag">Excel</span>
+                <span class="skill-tag">Copilot Studio</span>
+                <span class="skill-tag">Power Automate</span>
+                <span class="skill-tag">Jira</span>
+                <span class="skill-tag">Confluence</span>
+              </div>
+            </article>
 
-              <!-- Microsoft PL-900 certificate -->
-              <figure class="cert-card">
-                <div class="cert-image-wrap">
-                  <img
-                    src="PL-900.jpg"
-                    alt="Microsoft Certified: Power Platform Fundamentals (PL-900) certificate"
-                    loading="lazy"
-                  />
-                </div>
-                <figcaption>
-                  <div class="cert-name">Microsoft Certified: Power Platform Fundamentals (PL‑900)</div>
-                  <div class="cert-meta">Microsoft · Issued Feb 2026</div>
-                </figcaption>
-              </figure>
-            </div>
+            <article class="cert-list reveal">
+              <h3>Certifications</h3>
+              <ul>
+                <li>
+                  SAP Certified: Master Data Governance, Business
+                  Transformation, MDG Deployments, SuccessFactors Employee
+                  Lifecycle.
+                </li>
+                <li>Microsoft Certified: Power Platform Fundamentals.</li>
+                <li>
+                  Google: Digital Marketing, Project Management, AI Essentials.
+                </li>
+                <li>Oracle: ERP Foundations, HCM Foundations, OCI Foundations.</li>
+                <li>
+                  PMI: Generative AI Overview for Project Managers.
+                </li>
+              </ul>
+            </article>
           </div>
 
-              <!-- Additional certs summary -->
-            
-
           <!-- CERT BADGE STRIP -->
-          
+          <div class="cert-badges reveal">
+            <span class="cert-badge cert-badge-sap"
+              >SAP MDG Certified</span
+            >
+            <span class="cert-badge cert-badge-ms"
+              >Microsoft Power Platform Fundamentals (PL-900)</span
+            >
+            <span class="cert-badge cert-badge-google"
+              >Google Project Management</span
+            >
+            <span class="cert-badge cert-badge-google"
+              >Google AI Essentials</span
+            >
+            <span class="cert-badge cert-badge-oracle"
+              >Oracle ERP / HCM Foundations</span
+            >
+            <span class="cert-badge cert-badge-pmi"
+              >PMI Generative AI Overview</span
+            >
+          </div>
+        </div>
+      </section>
 
       <!-- CONTACT -->
-           <!-- CONTACT -->
       <section id="contact">
         <div class="container">
           <div class="section-head reveal">
@@ -1889,14 +1813,19 @@
               <h2>Open to tech, consulting, and transformation roles</h2>
             </div>
             <p>
-              Particularly interested in SAP consulting, business analysis, digital transformation, and enterprise application roles in the UK and internationally.
+              Particularly interested in SAP consulting, business analysis,
+              digital transformation, and enterprise application roles in the UK
+              and internationally.
             </p>
           </div>
 
           <div class="contact-grid">
             <div class="reveal">
               <div class="contact-links">
-                <a class="btn btn-primary" href="mailto:abhrasrmeee@gmail.com">
+                <a
+                  class="btn btn-primary"
+                  href="mailto:abhrasrmeee@gmail.com"
+                >
                   <svg
                     width="16"
                     height="16"
@@ -1912,34 +1841,60 @@
                   </svg>
                   abhrasrmeee@gmail.com
                 </a>
-                <a class="btn btn-secondary" href="tel:+447901309000">
-                  07901 309000
-                </a>
+                <a class="btn btn-secondary" href="tel:+447901309000"
+                  >07901 309000</a
+                >
                 <a
                   class="btn btn-secondary"
                   href="https://www.linkedin.com/in/abhraneel-roy"
                   target="_blank"
                   rel="noopener noreferrer"
+                  >LinkedIn profile ↗</a
                 >
-                  LinkedIn profile ↗
-                </a>
               </div>
             </div>
 
             <aside class="contact-card reveal">
               <h3>Let's work together</h3>
               <p>
-                I'm open to SAP consulting, BA roles, digital transformation projects, and process improvement opportunities. I can work on-site, hybrid, or remotely and am open to relocation for the right opportunity.
+                I'm open to SAP consulting, BA roles, digital transformation
+                projects, and process improvement opportunities. I can work
+                on-site, hybrid, or remotely and am open to relocation for the
+                right opportunity.
               </p>
               <div class="contact-links">
-                <a class="btn btn-primary" href="mailto:abhrasrmeee@gmail.com">
-                  Send a message
-                </a>
+                <a
+                  class="btn btn-primary"
+                  href="mailto:abhrasrmeee@gmail.com"
+                  >Send a message</a
+                >
               </div>
             </aside>
           </div>
         </div>
       </section>
+    </main>
+
+    <footer>
+      <div class="container footer-inner">
+        <div class="footer-left">
+          © 2026 Abhraneel Roy · Built for clarity and impact.
+        </div>
+        <div class="footer-right">
+          <a class="footer-link" href="mailto:abhrasrmeee@gmail.com">Email</a>
+          <a
+            class="footer-link"
+            href="https://www.linkedin.com/in/abhraneel-roy"
+            target="_blank"
+            rel="noopener noreferrer"
+            >LinkedIn</a
+          >
+          <a class="footer-link" href="#top">Back to top ↑</a>
+        </div>
+      </div>
+    </footer>
+
+    <script>
       // Theme toggle
       (function () {
         const t = document.querySelector("[data-theme-toggle]");
