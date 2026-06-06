@@ -903,6 +903,107 @@
 
       /* CERT BADGES STRIP */
 
+            /* CERTIFICATION TABS */
+      .cert-tabs {
+        margin-top: var(--space-10);
+        padding: var(--space-6);
+        border-radius: var(--radius-xl);
+        background: var(--color-surface);
+        border: 1px solid var(--color-border);
+        box-shadow: var(--shadow-sm);
+      }
+
+      .cert-tabs-nav {
+        display: inline-flex;
+        padding: 0.25rem;
+        border-radius: var(--radius-full);
+        background: var(--color-surface-offset);
+        border: 1px solid var(--color-border);
+        margin-bottom: var(--space-5);
+      }
+
+      .cert-tab {
+        position: relative;
+        border-radius: var(--radius-full);
+        padding: 0.4rem 1.4rem;
+        font-size: var(--text-sm);
+        color: var(--color-text-muted);
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        transition: background 0.18s ease, color 0.18s ease, transform 0.12s ease;
+      }
+
+      .cert-tab-active {
+        background: #fff;
+        color: var(--color-primary);
+        box-shadow: var(--shadow-sm);
+        transform: translateY(-1px);
+      }
+
+      .cert-tabs-panels {
+        margin-top: var(--space-3);
+      }
+
+      .cert-tab-panel {
+        display: none;
+      }
+
+      .cert-tab-panel-active {
+        display: block;
+      }
+
+      .cert-panel-grid {
+        display: grid;
+        grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+        gap: var(--space-6);
+        align-items: center;
+      }
+
+      .cert-panel-text h3 {
+        font-size: var(--text-lg);
+        margin-bottom: var(--space-2);
+      }
+
+      .cert-panel-text p {
+        font-size: var(--text-sm);
+        color: var(--color-text-muted);
+        margin-bottom: var(--space-3);
+      }
+
+      .cert-panel-text ul {
+        list-style: none;
+        display: grid;
+        gap: var(--space-2);
+        font-size: var(--text-sm);
+        color: var(--color-text-muted);
+        padding-left: var(--space-4);
+      }
+
+      .cert-panel-text li {
+        position: relative;
+      }
+
+      .cert-panel-text li::before {
+        content: "•";
+        position: absolute;
+        left: -1rem;
+        color: var(--color-primary);
+      }
+
+      .cert-panel-image img {
+        border-radius: var(--radius-lg);
+        border: 1px solid var(--color-border);
+        background: var(--color-surface-offset);
+        max-height: 260px;
+        object-fit: contain;
+      }
+
+      @media (max-width: 960px) {
+        .cert-panel-grid {
+          grid-template-columns: 1fr;
+        }
+      }
       .cert-badges {
         margin-top: var(--space-8);
         display: flex;
@@ -1779,7 +1880,97 @@
               </ul>
             </article>
           </div>
+          <!-- CERTIFICATION TABS -->
+          <div class="cert-tabs reveal">
+            <div class="cert-tabs-nav" role="tablist" aria-label="Certification tabs">
+              <button
+                class="cert-tab cert-tab-active"
+                type="button"
+                role="tab"
+                aria-selected="true"
+                aria-controls="cert-sap"
+                data-cert-tab="sap"
+              >
+                SAP
+              </button>
+              <button
+                class="cert-tab"
+                type="button"
+                role="tab"
+                aria-selected="false"
+                aria-controls="cert-ms"
+                data-cert-tab="ms"
+              >
+                Microsoft
+              </button>
+            </div>
 
+            <div class="cert-tabs-panels">
+              <!-- SAP tab content -->
+              <div
+                id="cert-sap"
+                class="cert-tab-panel cert-tab-panel-active"
+                role="tabpanel"
+                aria-labelledby="cert-tab-sap"
+              >
+                <div class="cert-panel-grid">
+                  <div class="cert-panel-text">
+                    <h3>SAP Certified - SAP Master Data Governance</h3>
+                    <p>
+                      Validates my ability to support governance-led SAP MDG deployments,
+                      data modelling, and business transformation work within complex
+                      enterprise landscapes.
+                    </p>
+                    <ul>
+                      <li>Focus on master data quality, governance workflows, and controls.</li>
+                      <li>Supports my SAP S/4HANA MM/SD and MDG project experience.</li>
+                      <li>Issued Feb 2026.</li>
+                    </ul>
+                  </div>
+                  <div class="cert-panel-image">
+                    <img
+                      src="SAP2024Certification20260207-31-d890ei.pdf.jpg"
+                      alt="SAP Certified - SAP Master Data Governance certificate"
+                      loading="lazy"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <!-- Microsoft tab content -->
+              <div
+                id="cert-ms"
+                class="cert-tab-panel"
+                role="tabpanel"
+                aria-labelledby="cert-tab-ms"
+                hidden
+              >
+                <div class="cert-panel-grid">
+                  <div class="cert-panel-text">
+                    <h3>Microsoft Certified: Power Platform Fundamentals (PL‑900)</h3>
+                    <p>
+                      Demonstrates my understanding of low-code automation and analytics
+                      across Power Apps, Power Automate, Power BI, and Copilot-enabled
+                      solutions.
+                    </p>
+                    <ul>
+                      <li>Foundation for building automation around SAP and operational processes.</li>
+                      <li>Aligns with my work on Copilot Studio chatbots and reporting.</li>
+                      <li>Issued Feb 2026.</li>
+                    </ul>
+                  </div>
+                  <div class="cert-panel-image">
+                    <img
+                      src="PL-900.jpg"
+                      alt="Microsoft Certified: Power Platform Fundamentals certificate"
+                      loading="lazy"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
           <!-- CERT BADGE STRIP -->
           <div class="cert-badges reveal">
             <span class="cert-badge cert-badge-sap"
@@ -1938,6 +2129,35 @@
           { threshold: 0.12 }
         );
         els.forEach((el) => io.observe(el));
+      })();
+            // Certification tabs
+      (function () {
+        const tabButtons = document.querySelectorAll(".cert-tab");
+        const panels = document.querySelectorAll(".cert-tab-panel");
+
+        if (!tabButtons.length) return;
+
+        tabButtons.forEach((btn) => {
+          btn.addEventListener("click", () => {
+            const target = btn.getAttribute("data-cert-tab");
+
+            // Update buttons
+            tabButtons.forEach((b) => {
+              b.classList.toggle("cert-tab-active", b === btn);
+              b.setAttribute("aria-selected", b === btn ? "true" : "false");
+            });
+
+            // Update panels
+            panels.forEach((panel) => {
+              const isTarget =
+                (target === "sap" && panel.id === "cert-sap") ||
+                (target === "ms" && panel.id === "cert-ms");
+
+              panel.classList.toggle("cert-tab-panel-active", isTarget);
+              panel.hidden = !isTarget;
+            });
+          });
+        });
       })();
     </script>
   </body>
