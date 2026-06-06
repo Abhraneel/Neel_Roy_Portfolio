@@ -902,7 +902,112 @@
       }
 
       /* CERT BADGES STRIP */
+      /* CERT GALLERY WITH IMAGES */
+      .cert-gallery {
+        margin-top: var(--space-12);
+      }
 
+      .cert-gallery-title {
+        font-family: var(--font-display);
+        font-size: var(--text-lg);
+        margin-bottom: var(--space-2);
+      }
+
+      .cert-gallery-sub {
+        font-size: var(--text-sm);
+        color: var(--color-text-muted);
+        margin-bottom: var(--space-5);
+        max-width: 46ch;
+      }
+
+      .cert-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: var(--space-5);
+      }
+
+      .cert-card {
+        background: var(--color-surface);
+        border-radius: var(--radius-lg);
+        border: 1px solid var(--color-border);
+        box-shadow: var(--shadow-sm);
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        transition: transform 0.2s ease, box-shadow 0.2s ease,
+          border-color 0.2s ease;
+      }
+
+      .cert-card:hover {
+        transform: translateY(-4px);
+        box-shadow: var(--shadow-lg);
+        border-color: color-mix(
+          in srgb,
+          var(--color-primary) 30%,
+          var(--color-border)
+        );
+      }
+
+      .cert-image-wrap {
+        background: var(--color-surface-offset);
+        padding: var(--space-3);
+      }
+
+      .cert-image-wrap img {
+        width: 100%;
+        border-radius: var(--radius-md);
+        object-fit: contain;
+        max-height: 180px;
+      }
+
+      .cert-card figcaption {
+        padding: var(--space-4);
+      }
+
+      .cert-name {
+        font-size: var(--text-sm);
+        font-weight: 600;
+      }
+
+      .cert-meta {
+        font-size: var(--text-xs);
+        color: var(--color-text-muted);
+        margin-top: var(--space-1);
+      }
+
+      .cert-card-minimal {
+        padding: var(--space-4);
+      }
+
+      .cert-pill-grid {
+        display: flex;
+        flex-wrap: wrap;
+        gap: var(--space-2);
+        margin-bottom: var(--space-3);
+      }
+
+      .cert-pill {
+        padding: 0.3rem 0.7rem;
+        border-radius: var(--radius-full);
+        background: var(--color-surface-offset);
+        font-size: var(--text-xs);
+        color: var(--color-text-muted);
+        border: 1px solid var(--color-border);
+        white-space: nowrap;
+      }
+
+      @media (max-width: 960px) {
+        .cert-grid {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+      }
+
+      @media (max-width: 640px) {
+        .cert-grid {
+          grid-template-columns: 1fr;
+        }
+      }
       .cert-badges {
         margin-top: var(--space-8);
         display: flex;
@@ -1728,56 +1833,57 @@
           </div>
 
           <div class="skills-grid">
-            <article class="skill-group reveal">
-              <h3>Core stack</h3>
-              <ul>
-                <li>
-                  SAP S/4HANA MM, SD, MDG — procure-to-pay and order-to-cash
-                  process support.
-                </li>
-                <li>
-                  Power BI, Advanced Excel, SQL, Smartsheet, Power Automate,
-                  Microsoft Copilot Studio.
-                </li>
-                <li>
-                  Incident & change management, SIT/UAT testing, cutover
-                  readiness, SOPs, training packs.
-                </li>
-                <li>
-                  Business analysis, KPI reporting, workflow mapping, and
-                  process improvement.
-                </li>
-              </ul>
-              <div class="skill-tags">
-                <span class="skill-tag">SAP S/4HANA</span>
-                <span class="skill-tag">Power BI</span>
-                <span class="skill-tag">SQL</span>
-                <span class="skill-tag">Excel</span>
-                <span class="skill-tag">Copilot Studio</span>
-                <span class="skill-tag">Power Automate</span>
-                <span class="skill-tag">Jira</span>
-                <span class="skill-tag">Confluence</span>
-              </div>
-            </article>
+                      <!-- Certification gallery with images -->
+          <div class="cert-gallery reveal">
+            <h3 class="cert-gallery-title">Certification highlights</h3>
+            <p class="cert-gallery-sub">
+              Visual snapshots of key credentials backing my SAP, automation, and analytics work.
+            </p>
+            <div class="cert-grid">
+              <!-- SAP MDG certificate -->
+              <figure class="cert-card">
+                <div class="cert-image-wrap">
+                  <img
+                    src="SAP2024Certification20260207-31-d890ei.pdf.png"
+                    alt="SAP Certified - SAP Master Data Governance certificate"
+                    loading="lazy"
+                  />
+                </div>
+                <figcaption>
+                  <div class="cert-name">SAP Certified - SAP Master Data Governance</div>
+                  <div class="cert-meta">SAP · Issued Feb 2026</div>
+                </figcaption>
+              </figure>
 
-            <article class="cert-list reveal">
-              <h3>Certifications</h3>
-              <ul>
-                <li>
-                  SAP Certified: Master Data Governance, Business
-                  Transformation, MDG Deployments, SuccessFactors Employee
-                  Lifecycle.
-                </li>
-                <li>Microsoft Certified: Power Platform Fundamentals.</li>
-                <li>
-                  Google: Digital Marketing, Project Management, AI Essentials.
-                </li>
-                <li>Oracle: ERP Foundations, HCM Foundations, OCI Foundations.</li>
-                <li>
-                  PMI: Generative AI Overview for Project Managers.
-                </li>
-              </ul>
-            </article>
+              <!-- Microsoft PL-900 certificate -->
+              <figure class="cert-card">
+                <div class="cert-image-wrap">
+                  <img
+                    src="PL-900.png"
+                    alt="Microsoft Certified: Power Platform Fundamentals (PL-900) certificate"
+                    loading="lazy"
+                  />
+                </div>
+                <figcaption>
+                  <div class="cert-name">Microsoft Certified: Power Platform Fundamentals (PL‑900)</div>
+                  <div class="cert-meta">Microsoft · Issued Feb 2026</div>
+                </figcaption>
+              </figure>
+
+              <!-- Additional certs summary -->
+              <figure class="cert-card cert-card-minimal">
+                <div class="cert-pill-grid">
+                  <div class="cert-pill">Google Project Management</div>
+                  <div class="cert-pill">Google AI Essentials</div>
+                  <div class="cert-pill">Oracle ERP / HCM Foundations</div>
+                  <div class="cert-pill">PMI Generative AI Overview</div>
+                </div>
+                <figcaption>
+                  <div class="cert-name">Additional certifications</div>
+                  <div class="cert-meta">Full list available on request or LinkedIn</div>
+                </figcaption>
+              </figure>
+            </div>
           </div>
 
           <!-- CERT BADGE STRIP -->
